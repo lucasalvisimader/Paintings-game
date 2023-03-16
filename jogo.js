@@ -35,19 +35,14 @@ function startGame(){
         </a-scene>
         <script src="./jogo.js"></script>
         `;
-    alert("Primeira dica: 😱");    
-
-    if(target1){
-        console.log("target1")
-        target1.addEventListener("targetFound", event => {
-            console.log("targetfound")
-            setInterval(
-                alert("Parabéns!! Você encontrou a pintura 'O Grito' de Edvard Munch")
-            , 5000); 
-            // localStorage.setItem("Pontuacao", 1);
-            alert("Próxima dica:  🌻");
-        });
-    }
+    alert("Primeira dica: 😱")
+    target1.addEventListener("targetFound", event => {
+        setInterval(
+            alert("Parabéns!! Você encontrou a pintura 'O Grito' de Edvard Munch")
+        , 5000); 
+        // localStorage.setItem("Pontuacao", 1);
+        alert("Próxima dica:  🌻");
+    });;    
     
     if(target2){
         target2.addEventListener("targetFound", event  => {

@@ -29,20 +29,23 @@ function startGame(){
             <a-entity id="img8" mindar-image-target="targetIndex: 7" ></a-entity>
             <a-entity id="img9" mindar-image-target="targetIndex: 8" ></a-entity>
             <a-entity id="img10" mindar-image-target="targetIndex: 9"></a-entity>
-            <a-entity mindar-image-target="targetIndex: 10" id="img11"></a-entity>
-            <a-entity mindar-image-target="targetIndex: 11" id="img12"></a-entity>
-            
+            <a-entity id="img11" mindar-image-target="targetIndex: 10"></a-entity>
+            <a-entity id="img12" mindar-image-target="targetIndex: 11"></a-entity>
+
         </a-scene>
         `;
-    alert("Primeira dica: 😱")
-    target1.addEventListener("targetFound", event => {
-        setInterval(
-            alert("Parabéns!! Você encontrou a pintura 'O Grito' de Edvard Munch")
-        , 5000); 
-        // localStorage.setItem("Pontuacao", 1);
-        alert("Próxima dica:  🌻");
-    });;    
+    alert("Primeira dica: 😱");  
     
+    if(target1) {
+        target1.addEventListener("targetFound", event => {
+            setInterval(
+                alert("Parabéns!! Você encontrou a pintura 'O Grito' de Edvard Munch")
+            , 5000); 
+            // localStorage.setItem("Pontuacao", 1);
+            alert("Próxima dica:  🌻");
+        });
+    }
+
     if(target2){
         target2.addEventListener("targetFound", event  => {
             setInterval(

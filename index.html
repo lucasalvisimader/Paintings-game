@@ -17,6 +17,18 @@
         <img src="./img/background.png" alt="">
         <button onclick="startGame()">Start Game</button>
     </main>
+    <a-entity id="img1" mindar-image-target="targetIndex: 0" color="transparent"></a-entity>
+    <a-entity id="img2" mindar-image-target="targetIndex: 1"></a-entity>
+    <a-entity id="img3" mindar-image-target="targetIndex: 2"></a-entity>
+    <a-entity id="img4" mindar-image-target="targetIndex: 3"></a-entity>
+    <a-entity id="img5" mindar-image-target="targetIndex: 4"></a-entity>
+    <a-entity id="img6" mindar-image-target="targetIndex: 5"></a-entity>
+    <a-entity id="img7" mindar-image-target="targetIndex: 6"></a-entity>
+    <a-entity id="img8" mindar-image-target="targetIndex: 7"></a-entity>
+    <a-entity id="img9" mindar-image-target="targetIndex: 8"></a-entity>
+    <a-entity id="img10" mindar-image-target="targetIndex: 9"></a-entity>
+    <a-entity id="img11" mindar-image-target="targetIndex: 10"></a-entity>
+    <a-entity id="img12" mindar-image-target="targetIndex: 11"></a-entity>
     <script>
         let target1 = document.querySelector('#img1');
         let target2 = document.querySelector('#img2');
@@ -38,43 +50,25 @@
                 `
         <a-scene mindar-image="imageTargetSrc: ./targets.mind" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
-            <a-entity id="img1" mindar-image-target="targetIndex: 0" color="transparent"></a-entity>
-            <a-entity id="img2" mindar-image-target="targetIndex: 1" ></a-entity>
-            <a-entity id="img3" mindar-image-target="targetIndex: 2" ></a-entity>
-            <a-entity id="img4" mindar-image-target="targetIndex: 3" ></a-entity>
-            <a-entity id="img5" mindar-image-target="targetIndex: 4" ></a-entity>
-            <a-entity id="img6" mindar-image-target="targetIndex: 5" ></a-entity>
-            <a-entity id="img7" mindar-image-target="targetIndex: 6" ></a-entity>
-            <a-entity id="img8" mindar-image-target="targetIndex: 7" ></a-entity>
-            <a-entity id="img9" mindar-image-target="targetIndex: 8" ></a-entity>
-            <a-entity id="img10" mindar-image-target="targetIndex: 9"></a-entity>
-            <a-entity id="img11" mindar-image-target="targetIndex: 10"></a-entity>
-            <a-entity id="img12" mindar-image-target="targetIndex: 11"></a-entity>
-
         </a-scene>
         `;
             alert("Primeira dica: 😱");
 
-            if (target1) {
-                target1.addEventListener("targetFound", event => {
-                    setInterval(
-                        alert("Parabéns!! Você encontrou a pintura 'O Grito' de Edvard Munch")
-                        , 5000);
-                    // localStorage.setItem("Pontuacao", 1);
-                    alert("Próxima dica:  🌻");
-                });
-            }
+            target1.addEventListener("targetFound", event => {
+                setInterval(
+                    alert("Parabéns!! Você encontrou a pintura 'O Grito' de Edvard Munch")
+                    , 5000);
+                // localStorage.setItem("Pontuacao", 1);
+                alert("Próxima dica:  🌻");
+            });
+            target2.addEventListener("targetFound", event => {
+                setInterval(
+                    alert("Parabéns!! Você encontrou a pintura 'Doze Girassóis' de Vincent van Gogh")
+                    , 5000);
+                localStorage.setItem("Pontuacao", 2);
+                alert("Próxima dica:  🌃");
+            });
 
-            if (target2) {
-                target2.addEventListener("targetFound", event => {
-                    setInterval(
-                        alert("Parabéns!! Você encontrou a pintura 'Doze Girassóis' de Vincent van Gogh")
-                        , 5000);
-                    localStorage.setItem("Pontuacao", 2);
-                    alert("Próxima dica:  🌃");
-                });
-            }
 
             if (target3) {
                 target3.addEventListener("targetFound", event => {
@@ -180,4 +174,5 @@
 
     </script>
 </body>
+
 </html>

@@ -14,7 +14,7 @@ let target12 = document.querySelector('#img12');
 function startGame(){
 
     document.getElementById('main').style.background = "transparent";
-    document.getElementById('body').innerHTML =
+    document.getElementById('main').innerHTML =
         `
         <a-scene mindar-image="imageTargetSrc: ./targets.mind" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -31,9 +31,8 @@ function startGame(){
             <a-entity id="img10" mindar-image-target="targetIndex: 9"></a-entity>
             <a-entity mindar-image-target="targetIndex: 10" id="img11"></a-entity>
             <a-entity mindar-image-target="targetIndex: 11" id="img12"></a-entity>
-
+            
         </a-scene>
-        <script src="./jogo.js"></script>
         `;
     alert("Primeira dica: 😱")
     target1.addEventListener("targetFound", event => {
